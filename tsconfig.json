@@ -19,7 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@/lib/supabase/database.types": ["./src/types/database.types.ts"]
     }
   },
   "include": [

@@ -18,7 +18,7 @@ import { createMiddlewareSupabaseClient } from "@/lib/supabase/middleware";
 // Rutas que NO requieren autenticacion
 const PUBLIC_PATHS = [
   "/login",
-  "/registro",
+  "/register",
   "/",  // Pagina de inicio publica
 ];
 
@@ -52,8 +52,8 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
-  // Si hay sesion y el usuario intenta ir al login -> redirigir al dashboard
-  if (session && pathname === "/login") {
+  // Si hay sesion y el usuario intenta ir al login o register -> redirigir al dashboard
+  if (session && (pathname === "/login" || pathname === "/register")) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 

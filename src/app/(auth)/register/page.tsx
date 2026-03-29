@@ -82,13 +82,13 @@ export default function RegisterPage() {
             />
           </div>
 
-          {error && (
+          {error ? (
             <p className="text-red-500 text-sm">{error}</p>
-          )}
+          ) : null}
 
-          {success && (
+          {success ? (
             <p className="text-green-600 text-sm bg-green-50 p-2 rounded-lg border border-green-200">{success}</p>
-          )}
+          ) : null}
 
           <button
             type="submit"

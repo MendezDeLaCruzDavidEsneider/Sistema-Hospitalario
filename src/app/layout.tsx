@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body className={geist.className}>
         {/* Proveedor de notificaciones toast globales */}
         <Toaster
